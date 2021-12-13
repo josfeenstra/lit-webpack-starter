@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, query } from "lit/decorators.js";
 import { LightElement } from "../../lit/element";
 
 export class LitPlanet extends LightElement {
@@ -9,18 +9,33 @@ export class LitPlanet extends LightElement {
     @property({ type: String }) name = "Earth";
     destoyed = false;
 
+    @query('#btn')
+    _button: any;
+
     render() {
-
-        console.log("render planet");
-
-        return html`
-            <button class="btn ${this.destoyed ? "btn-outline-danger" : "btn-outline-primary"}"
+        let stuff =  html`
+            <button id="btn" class="btn ${this.destoyed ? "btn-outline-danger" : "btn-outline-primary"}"
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Don't you dare!"
                 @click=${() => {
                     this.togglePlanet();
                 }}>
                 ${this.name}
             </button>
         `;
+
+        // TODO fancy tooltips...
+        // if (this._button) {
+        //     // @ts-ignore
+        //     let tt = new bootstrap.Tooltip(this._button);
+        // }
+
+        return stuff;
+    }
+
+    firstUpdated() {
+        // add nice-looking tooltip
+        //@ts-ignore
+        return new bootstrap.Tooltip(this._button);
     }
 
     // Event handlers can update the state of @properties on the element
