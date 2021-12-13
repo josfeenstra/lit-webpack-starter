@@ -14,6 +14,11 @@ module.exports = (env) => {
                     use: "ts-loader",
                     include: [path.resolve(__dirname, "src")],
                 },
+                {
+                    test: /\.css$/i,
+                    loader: "css-loader",
+                    include: [path.resolve(__dirname, "src")],
+                },
             ],
         },
         output: {

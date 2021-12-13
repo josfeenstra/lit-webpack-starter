@@ -1,8 +1,8 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { WebElement } from "../element";
+import { LightElement } from "../../lit/element";
 
-export class MainView extends WebElement {
+export class MainView extends LightElement {
 
     constructor() {
         super();
@@ -11,10 +11,12 @@ export class MainView extends WebElement {
 
     render() {
         return html`
-            <h1>Click a planet to destroy it!</h1>
+        <div class="container">
+            <h1 class= "pt-3">Click a planet to destroy it!</h1>
             <br />
-            <lit-solar-system></lit-solar-system>
+            <lit-solar-system/>
             <br />
+        </div>
         `;
     }
 }

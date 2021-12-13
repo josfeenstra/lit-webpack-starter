@@ -1,11 +1,13 @@
-import { Lit } from "./lit/init";
+import { Bootstrap } from "./bootstrap/bootstrap";
+import { MyStuff } from "./my-stuff/my-stuff";
 
 /**
  * Entry point
  */
 function main() {
-    console.log("loaded!");
-    Lit.init(document.body);
+    // Bootstrap.define();
+    MyStuff.define();
+    document.body.innerHTML = `<main-view></main-view>`;
 }
 
 window.addEventListener("load", main, false);

@@ -1,11 +1,11 @@
-import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
-import { WebElement } from "../element";
 
-export class LitSolarSystem extends WebElement {
+import { html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { LightElement } from "../../lit/element";
+
+export class LitSolarSystem extends LightElement {
     
     render() {
-  
         console.log("render system");
 
         let names = [
@@ -27,7 +27,7 @@ export class LitSolarSystem extends WebElement {
                     return html`${planet}`;
                 })}
                 <br />
-                <lit-message />
+                <lit-message/>
                 <br />
             </div>
         `;

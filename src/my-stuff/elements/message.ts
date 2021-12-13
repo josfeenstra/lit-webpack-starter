@@ -1,8 +1,8 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { WebElement } from "../element";
+import { LightElement } from "../../lit/element";
 
-export class LitMessage extends WebElement {
+export class LitMessage extends LightElement {
     
     connectedCallback() {
         super.connectedCallback();

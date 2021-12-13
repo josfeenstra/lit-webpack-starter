@@ -1,8 +1,18 @@
 import { LitElement } from "lit";
 
-export class WebElement extends LitElement {
+/**
+ * Light as in: not using the shadow dom
+ */
+export class LightElement extends LitElement {
+    
     static enabledWarnings = [];
 
+    createRenderRoot() {
+        return this;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    
     static defineAs(tag: string) {
         customElements.define(tag, this);
     }
