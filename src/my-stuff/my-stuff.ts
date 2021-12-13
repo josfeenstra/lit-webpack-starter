@@ -2,7 +2,7 @@ import { html } from "lit";
 import { LitMessage } from "./elements/message";
 import { LitPlanet } from "./elements/planet";
 import { LitSolarSystem } from "./elements/solar-system";
-import { MainView } from "./views/view";
+import { MainView } from "./views/main-view";
 
 declare global {
     interface HTMLElementTagNameMap {

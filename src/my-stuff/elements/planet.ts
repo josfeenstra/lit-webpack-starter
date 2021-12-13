@@ -3,14 +3,10 @@ import { customElement, property, query } from "lit/decorators.js";
 import { LightElement } from "../../lit/element";
 
 export class LitPlanet extends LightElement {
-
-    // Define reactive properties--updating a reactive property causes
-    // the component to update.
-    @property({ type: String }) name = "Earth";
+    
     destoyed = false;
-
-    @query('#btn')
-    _button: any;
+    @property({ type: String }) name = "Earth";
+    @query('#btn')  _button: any;
 
     render() {
         let stuff =  html`
@@ -23,12 +19,6 @@ export class LitPlanet extends LightElement {
             </button>
         `;
 
-        // TODO fancy tooltips...
-        // if (this._button) {
-        //     // @ts-ignore
-        //     let tt = new bootstrap.Tooltip(this._button);
-        // }
-
         return stuff;
     }
 
@@ -38,8 +28,6 @@ export class LitPlanet extends LightElement {
         return new bootstrap.Tooltip(this._button);
     }
 
-    // Event handlers can update the state of @properties on the element
-    // instance, causing it to re-render
     togglePlanet() {
         this.requestUpdate();
         let message = "";
