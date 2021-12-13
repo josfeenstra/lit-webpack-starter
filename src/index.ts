@@ -1,4 +1,3 @@
-import { Bootstrap } from "./bootstrap/bootstrap";
 import { MyStuff } from "./my-stuff/my-stuff";
 
 /**
