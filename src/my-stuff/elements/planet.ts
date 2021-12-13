@@ -7,19 +7,19 @@ export class LitPlanet extends LightElement {
     // Define reactive properties--updating a reactive property causes
     // the component to update.
     @property({ type: String }) name = "Earth";
+    destoyed = false;
 
     render() {
 
         console.log("render planet");
 
         return html`
-            <span class="text-primary"
+            <button class="btn ${this.destoyed ? "btn-outline-danger" : "btn-outline-primary"}"
                 @click=${() => {
                     this.togglePlanet();
-                }}
-            >
-                <p>${this.name}</p>
-            </span>
+                }}>
+                ${this.name}
+            </button>
         `;
     }
 
@@ -35,7 +35,6 @@ export class LitPlanet extends LightElement {
         }
         this.dispatchMessageEvent(message, 'maniac-message');
         this.name = "boom!";
+        this.destoyed = true;
     }
-
-    
 }
